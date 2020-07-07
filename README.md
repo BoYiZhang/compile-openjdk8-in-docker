@@ -20,8 +20,44 @@
 ## 4.编译
  
 `docker build -t ubuntu1404_openjdk8:v1 . `
+
  **[注意命令后面的那个点[ . ]  ]**
- 
+
+```bash
+
+## Finished images (build time 00:01:08)
+----- Build times -------
+Start 2020-07-07 03:48:44
+End   2020-07-07 04:19:45
+00:01:24 corba
+00:01:01 demos
+00:17:27 hotspot
+00:01:08 images
+00:00:36 jaxp
+00:01:02 jaxws
+00:06:57 jdk
+00:00:51 langtools
+00:00:35 nashorn
+00:31:01 TOTAL
+-------------------------
+Finished building OpenJDK for target 'images'
+Removing intermediate container 69bcdd4b0831
+ ---> ba8a923bd614
+Step 8/8 : RUN  ls -al /opt/openjdk
+ ---> Running in ce954a436586
+total 125072
+drwxr-xr-x  1 root root      4096 Jul  7 03:48 .
+drwxr-xr-x  1 root root      4096 Jul  7 03:46 ..
+-rw-r--r--  1 root root 128058047 Jan 14 20:07 openjdk-8u41-src-b04-14_jan_2020.zip
+drwxr-xr-x 14 root root      4096 Jul  7 03:48 openjdk8
+Removing intermediate container ce954a436586
+ ---> 23c0dfed1d0f
+Successfully built 23c0dfed1d0f
+Successfully tagged ubuntu1404_openjdk8:v1
+MacBook-Pro:ubuntu1404_openjdk8 sysadmin$
+
+```
+
 ## 5. 进入目录查看编译后的文件
 `docker run -ti --entrypoint /bin/sh ubuntu1404_openjdk8:v1`
 
